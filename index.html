@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <form>
+        <p>
+            <label for="addend1">Первое слагаемое:</label>
+            <input id="addend1" type="number" step="any" pattern="[-+]?[0-9]*[.,]?[0-9]+" title="numbers only">
+        </p>
+        <p>
+            <label for="addend2">Второе слагаемое:</label>
+            <input id="addend2" type="number" step="any" pattern="[-+]?[0-9]*[.,]?[0-9]+" title="numbers only">
+        </p>
+        <p>
+            <input id="btnSum" type="button" value="Сложить">
+        </p>
+        <p id="sum">
+        </p>
+    </form>
+    <script type= text/javascript>
+        function doSum() {
+            let result = Number(addend1.value) + Number(addend2.value);
+            html = 'Результат: <br>' + String(result);
+            sum.innerHTML = html;
+        }
+        btnSum.addEventListener('click', doSum);
+    </script>
+</body>
+</html>
